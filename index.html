@@ -1,7 +1,91 @@
 <html>
-	<head>
-		<title>Sampel</title>
-	</head>
-	<body>
-	</body>
+    <head>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="style.css">
+        
+
+    </head>
+    <body>
+
+        <div class="main mx-auto">
+            <div class="header text-center">
+                <h1 class="animated infinite heartbeat slow">Calculator</h1>
+            </div>
+
+            <hr class="border border-dark">
+            <marquee class="text-size"><h2>Calculate your Marks and Percentage</h2></marquee>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-5 text-left mt-5">
+                        <h1 class="text-uppercase b pl-3">Student Grade Calcy</h1>
+                    </div>
+
+                    <div class="col-sm-7 area">
+                        <input id="ma" type="text" placeholder="Math" style="background-color: #9966ff;">
+                        <input id="py" type="text" placeholder="Physics" style="background-color: #9966ff;">
+                        <input id="chem" type="text" placeholder="Chemistry" style="background-color: #9966ff;">
+                        <input id="com" type="text" placeholder="Computer" style="background-color: #9763fb;">
+
+                        <button class="btn btn-lg font-weight-bold" type="submit" onclick="cal()"><h3>Show Percentage</h3></button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 text-center font-weight-bold mt-4">
+    
+                        <h4><p style="color: black;" id="showdata"></p></h4>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <script>
+
+            
+
+            function cal(){
+                let ma = document.getElementById('ma').value
+                let py = document.getElementById('py').value;
+                let chem = document.getElementById('chem').value;
+                let com = document.getElementById('com').value;
+                let grade,res;
+                
+
+                let total = parseFloat(ma) + parseFloat(py) + parseFloat(chem) + parseFloat(com)
+                alert("Total:  " + total);
+
+                let per = (total/400) * 100;
+
+                if(per<=100 && per>=74){
+                    grade = 'A';
+                }else if(per<=74 && per>=60){
+                    grade = 'B';
+                }else if(per<=59 && per>=35){
+                    garde = 'C';
+                }else{
+                    grade = 'F';
+                }
+
+                if(per<=100 && per>=35){
+                    res = 'Pass';
+                }else{
+                    res = 'Fail';
+                }
+
+                document.getElementById("showdata").innerHTML = ("Out of 400 Your Total is " + total + " and Percentage is " + per + "%. <br> Your Grade is " + grade + ". You are " + res + ".");
+            }
+
+        </script>
+
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    </body>
 </html>

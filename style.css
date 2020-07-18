@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to bottom, #9966ff 60%, #660066 116%);
+}
+
+.main{
+    width: 50%;
+    height: 80%;
+    margin-top: 70px;
+    /* background-color: rgb(148, 196, 109); */
+}
+
+.b{
+    border-left: 5px solid black;
+}
+
+.area{
+    margin-top: 50px;
+}
+
+::placeholder {
+    color: black;
+    opacity: 0.6;
+  }
+
+.area input{
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    opacity: 3;
+    background-color: darkgray;
+    border: none;
+    border-bottom: 3px solid black;
+    
+}
